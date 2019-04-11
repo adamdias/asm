@@ -13,15 +13,15 @@ function menu() {
 
 const links_menu = document.getElementsByClassName('link-scroll');
 Array.from(links_menu).forEach(function(a) {    
-    a.addEventListener('click', scrollToo);     
+    a.addEventListener('click', scrollToo);    
 });
 
 function scrollToo(e) {
     e.preventDefault();
-    var id = this.getAttribute('href');
-    var el = document.querySelector(id);
-    var posicao = el.getBoundingClientRect().top;
-    scrollBy(this.scrollTop, (posicao - 80));
+    let id = this.getAttribute('href');
+    let el = document.querySelector(id);
+    let position = el.getBoundingClientRect().top - 57;
+    window.scrollBy(this.scrollTop, position);
 
     Array.from(links_menu).forEach(function(a) {    
         a.classList.remove('active');
@@ -31,7 +31,13 @@ function scrollToo(e) {
     if (visible) {
         menu_mobile.style.left = '-250px';
         visible = false;
-    }    
+    }
+}
+
+if (window.pageYOffset > 0) {
+    box_menu.classList.add('page-menu-scroll');        
+} else {
+    box_menu.classList.remove('page-menu-scroll');
 }
 
 window.onscroll = scroll;
@@ -52,7 +58,7 @@ function scroll() {
         a.classList.remove('active');
     });
 
-    if (window.pageYOffset >= (who.offsetTop - 85)) {
+    if (window.pageYOffset >= (who.offsetTop - 60)) {
         Array.from(links_menu).forEach(function(a) {
             a.classList.remove('active');         
             if (a.getAttribute('href') == "#who") {
@@ -61,7 +67,7 @@ function scroll() {
         });
     } 
     
-    if (window.pageYOffset >= (experience.offsetTop - 85)) {
+    if (window.pageYOffset >= (experience.offsetTop - 60)) {
         Array.from(links_menu).forEach(function(a) {
             a.classList.remove('active');        
             if (a.getAttribute('href') == "#experience") {
@@ -70,7 +76,7 @@ function scroll() {
         });
     }
 
-    if (window.pageYOffset >= (atas.offsetTop - 85)) {
+    if (window.pageYOffset >= (atas.offsetTop - 60)) {
         Array.from(links_menu).forEach(function(a) {
             a.classList.remove('active');        
             if (a.getAttribute('href') == "#atas") {

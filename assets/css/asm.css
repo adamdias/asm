@@ -47,12 +47,14 @@ ul {
 
 .page-menu {
     position: fixed;
-    top: 0;        
+    top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 99;    
 }
 
 .page-menu-scroll {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;    
     background: #FFF;
     box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);
     -webkit-box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);
@@ -61,6 +63,7 @@ ul {
 
 .page-menu-scroll .page-menu-mobile-btn {
     color: #363D47 !important;
+    padding-top: 2px;
 }
 
 .box-page-menu-desktop {
@@ -81,6 +84,7 @@ ul {
     font-size: 12px;
     color: #fff;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .page-menu-desktop a:hover {
@@ -114,12 +118,13 @@ ul {
 }
 
 .page-menu-mobile a {
-    color: #CCC;
+    color: #999999;
     text-transform: uppercase;
     display: block;
     width: 100%;
     padding: 15px 25px;
     font-size: 12px;
+    font-weight: bold;
 }
 
 .page-menu-desktop a.active, .page-menu-mobile a.active {
@@ -128,8 +133,7 @@ ul {
 }
 
 .page-menu-mobile .page-logo {
-    text-align: center;
-    padding: 15px;
+    padding: 15px 25px;
     display: block;
 }
 
@@ -191,7 +195,7 @@ ul {
     -moz-border-radius: 5px;
     box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);
     -webkit-box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);
-    -moz-box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);
+    -moz-box-shadow: 0 16px 36px 0 rgba(54, 61, 71, 0.14);    
 }
 
 .box-details-item img {
@@ -294,7 +298,7 @@ ul {
     text-transform: uppercase;
     color: #045119;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 32px;
     display: block;
 }
@@ -381,13 +385,15 @@ ul {
     padding-bottom: 60px !important;
     background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/00-anti-office.jpg.foto.rbig.png');
     background-repeat: no-repeat;
-    background-size: cover;     
+    background-size: cover;        
 }
 
 .main_experience {
     background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/iStock_81219573_1200px.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;   
+    background-position: center; 
 }
 
 .main_atas .row {
@@ -397,6 +403,10 @@ ul {
 
 .main_atas .main_atas_form {
     margin-top: 65px;
+}
+
+.main_atas_col {
+    margin-bottom: 0 !important;
 }
 
 .main_atas_form select {
@@ -488,6 +498,10 @@ ul {
     }
     .box-page-menu-desktop {
         display: inline-block !important;
+    }
+
+    .box-details-item {
+        min-height: 470px !important;
     }
 }
 
@@ -602,5 +616,15 @@ ul {
     .main_call {
         padding-top: 200px !important;
         padding-bottom: 160px !important;
+    }
+
+    .box-details-item {
+        min-height: 500px !important;
+    }
+}
+
+@media (min-width:1750px) {
+    .box-details-item {
+        min-height: 400px !important;
     }
 }
