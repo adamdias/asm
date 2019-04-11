@@ -11,11 +11,11 @@
 </head>
 <body>    
     <!-- MENU -->
-    <article id="box_menu" class="container page-menu">
+    <article id="box_menu" class="container page-menu main_menu">
         <div class="row">
             <header>
                 <div class="col col-50">
-                    <h1><a class="link-scroll page-logo page-logo-white" href="#header" title="ASM">ASM</a> <i onclick="menu()" class="fas fa-bars page-menu-mobile-btn"></i></h1>
+                    <h1><a class="link-scroll page-logo page-logo-white" href="#header" title="ASM">ASM</a> <i class="fas fa-bars page-menu-mobile-btn"></i></h1>
                 </div>
                 <div class="col col-50 box-page-menu-desktop">
                     <ul class="page-menu-desktop">
@@ -29,7 +29,7 @@
         </div>                     
     </article>
     
-    <ul id="menu_mobile" class="page-menu-mobile">
+    <ul id="menu_mobile" class="page-menu-mobile main_menu">
         <li><a class="page-logo page-logo-green link-scroll" href="#header" title="ASM">ASM</a></li>
         <li><a class="link-scroll" href="#who" title="Quem atendemos" class="active">Quem atendemos</a></li>
         <li><a class="link-scroll" href="#experience" title="Números">Números</a></li>
@@ -37,7 +37,7 @@
         <li><a class="link-scroll" href="#contact" title="Contato">Contato</a></li>        
     </ul>
     
-    <div id="header" class="container main_call">
+    <div id="header" class="page-section container main_call">
         <div class="row">
             <div class="col">
                 <article class="box-call">
@@ -50,7 +50,7 @@
     </div>
     
     <!-- QUEM ATENDEMOS -->
-    <section id="who" class="container container-medium box-background-light">
+    <section id="who" class="page-section container container-medium box-background-light">
         <div class="row" style="text-align: center;">
             <header class="col page-title">
                 <h1>Quem Atendemos</h1>
@@ -78,7 +78,7 @@
     </section>
 
     <!-- NOSSA EXPERÊNCIA -->    
-    <section id="experience" class="container container-medium main_experience">
+    <section id="experience" class="page-section container container-medium main_experience">
         <div class="row">            
             <header class="col page-title page-title-white">
                 <h1>Nossa experiência</h1>
@@ -113,7 +113,7 @@
     </section>
 
     <!-- ATA DOS EDITAIS -->
-    <section id="atas" class="container container-medium main_atas box-background-light">
+    <section id="atas" class="page-section container container-medium main_atas box-background-light">
         <div class="row">            
             <header class="col page-title">
                 <h1>Atas dos editais</h1>
@@ -271,6 +271,8 @@
                 </article>
             </div>
 
+            <div id="main_atas_box_ajax"></div>
+
             <div class="col" style="text-align: center;">
                 <a id="load_atas" href="#" title="Carregar mais" class="page-link">Carregar mais <i class="fas fa-chevron-down"></i></a>
             </div>            
@@ -278,7 +280,7 @@
     </section>
 
     <!-- CONTATO -->
-    <article id="contact" class="container container-medium container-large main_contact">
+    <article id="contact" class="page-section container container-medium container-large main_contact">
         <div class="row">
             <div class="col">
                 <header class="page-title page-title-white">
@@ -318,6 +320,7 @@
         <p>© 2019 ASM Tecnologia - Todos os direitos reservados.</p>
     </footer>
     
-    <script src="assets/js/asm.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/asmp.js"></script>
 </body>
 </html>
