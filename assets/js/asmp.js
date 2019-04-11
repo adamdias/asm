@@ -168,7 +168,7 @@ $(function(){
         }
 
         $('#main_atas_box_ajax').append(html)
-        $('#load_atas').fadeOut('fast');
+        $('#load_atas').css('display', 'none');
         return false;
     });
 });
