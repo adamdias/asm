@@ -383,13 +383,13 @@ ul {
 .main_call {
     padding-top: 100px !important;
     padding-bottom: 60px !important;
-    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/00-anti-office.jpg.foto.rbig.png');
+    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/00-anti-office.jpg.foto.rbig.jpg');
     background-repeat: no-repeat;
     background-size: cover;        
 }
 
 .main_experience {
-    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/iStock_81219573_1200px.png');
+    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/iStock_81219573_1200px.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;   
@@ -418,20 +418,45 @@ ul {
 }
 
 .main_contact {
-    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/istock-869283160.png');
+    background: linear-gradient(151.19deg, rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0) 100%), url('../img/istock-869283160.jpg');
     background-repeat: no-repeat;
     background-size: cover;    
 }
 
 .main_contact .page-title {
     max-width: 720px;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 48px;
 }
 
 .main_contact .row {    
     margin: 0 auto;
     position: relative;
+}
+
+/* Animação */
+
+[data-anime] {
+    opacity: 0;
+    transition: .3s;
+  }
+  
+[data-anime="left"] {
+transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime="right"] {
+transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="top"] {
+transform: translate3d(0, -50px, 0);
+}
+
+[data-anime].animate {
+opacity: 1;
+transform: translate3d(0px, 0px, 0px);
 }
 
 /* RESPONSIVE  */
@@ -576,8 +601,8 @@ ul {
     }
 
     .box-contact {
-        position: absolute;        
-        left: 0;
+        width: 100%;
+        position: absolute;                
         bottom: -280px;
     }
 
@@ -599,7 +624,8 @@ ul {
     }
 
     .main_contact .page-title {
-        margin-bottom: 180px !important;
+        margin-top: 40px !important;
+        margin-bottom: 132px !important;
     }
 
     .container-large {
@@ -620,6 +646,10 @@ ul {
 
     .box-details-item {
         min-height: 500px !important;
+    }
+
+    .contact-item {
+        padding: 70px 20px !important;
     }
 }
 

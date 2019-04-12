@@ -141,8 +141,9 @@ $(function(){
 
         let html = '';
         for (i = 0; i < data.length; i++) {
+            animate = (i % 2 === 0 ? 'data-anime="right"' : 'data-anime="left"');
             html += `
-            <div class="col main_atas_col">
+            <div class="col main_atas_col animate" ${animate}>
                 <article class="box-atas-item">
                     <div class="col col-5">
                         <ul class="atas-item-date">
@@ -171,4 +172,63 @@ $(function(){
         $('#load_atas').css('display', 'none');
         return false;
     });
+
+    $('.box-numbers-item h1').each(function() {
+        var $this   = $(this);
+        $this.data('target', parseInt($this.html()));
+        $this.data('counted', false);
+        $this.html('0');
+    });
+
+    $(window).bind('scroll', function() {
+        var speed   = 3000;
+        $('.box-numbers-item h1').each(function() {
+            var $this   = $(this);
+            if(!$this.data('counted') && $(window).scrollTop() + $(window).height() >= $this.offset().top) {
+                $this.data('counted', true);
+                $this.animate({dummy: 1}, {
+                    duration: speed,
+                    step:     function(now) {
+                        var $this   = $(this);
+                        var val     = Math.round($this.data('target') * now);
+                        $this.html(val);
+                    }
+                });
+            }
+        });
+    }).triggerHandler('scroll');
 });
+
+const debounce = function(func, wait, immediate) {
+    let timeout;
+    return function(...args) {
+        const context = this;
+        const later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
+function animeScroll() {
+    const target = document.querySelectorAll('[data-anime]');
+    const animationClass = 'animate';
+    const windowTop = window.pageYOffset + ((window.innerHeight * 4) / 4);
+    target.forEach(function(element) {
+        if((windowTop) > element.offsetTop) {
+        element.classList.add(animationClass);
+        } else {
+        element.classList.remove(animationClass);
+        }
+    })
+}
+
+animeScroll();
+
+window.onscroll = (debounce(function() {
+    animeScroll();
+}, 200));
