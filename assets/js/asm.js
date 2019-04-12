@@ -1,4 +1,4 @@
-$(function(){
+$(function(){    
     let visible = false;
     $('.page-menu-mobile-btn').click(function() {
         if (!visible) {
@@ -90,65 +90,58 @@ $(function(){
     $('#load_atas').click(function() {
         let data = [
             {
-                "date": "2019-04-20",
+                "date": "2019-04-20T00:00:00",
                 "name": "Esse é o nome da ata",
                 "description": "Essa é a descrição da ata",
                 "file": "arquivo.pdf"
             },
-            // {
-            //     "d": "12",
-            //     "m": "ABR",
-            //     "y": "2019",
-            //     "name": "Esse é o nome da ata 2",
-            //     "description": "Essa é a descrição da ata 2",
-            //     "file": "arquivo2.pdf"
-            // },
-            // {
-            //     "d": "13",
-            //     "m": "ABR",
-            //     "y": "2019",
-            //     "name": "Esse é o nome da ata 3",
-            //     "description": "Essa é a descrição da ata 3",
-            //     "file": "arquivo3.pdf"
-            // },
-            // {
-            //     "d": "14",
-            //     "m": "ABR",
-            //     "y": "2019",
-            //     "name": "Esse é o nome da ata 4",
-            //     "description": "Essa é a descrição da ata 4",
-            //     "file": "arquivo4.pdf"
-            // },
-            // {
-            //     "d": "15",
-            //     "m": "ABR",
-            //     "y": "2019",
-            //     "name": "Esse é o nome da ata 5",
-            //     "description": "Essa é a descrição da ata 5",
-            //     "file": "arquivo5.pdf"
-            // },
-            // {
-            //     "d": "16",
-            //     "m": "ABR",
-            //     "y": "2019",
-            //     "name": "Esse é o nome da ata 6",
-            //     "description": "Essa é a descrição da ata 6",
-            //     "file": "arquivo6.pdf"
-            // }
+            {
+                "date": "2019-04-22T00:00:00",
+                "name": "Esse é o nome da ata 2",
+                "description": "Essa é a descrição da ata 2",
+                "file": "arquivo2.pdf"
+            },
+            {
+                "date": "2019-05-25T00:00:00",
+                "name": "Esse é o nome da ata 3",
+                "description": "Essa é a descrição da ata 3",
+                "file": "arquivo3.pdf"
+            },
+            {
+                "date": "2019-06-10T00:00:00",
+                "name": "Esse é o nome da ata 4",
+                "description": "Essa é a descrição da ata 4",
+                "file": "arquivo4.pdf"
+            },
+            {
+                "date": "2019-07-15T00:00:00",
+                "name": "Esse é o nome da ata 5",
+                "description": "Essa é a descrição da ata 5",
+                "file": "arquivo5.pdf"
+            },
+            {
+                "date": "2019-08-30T00:00:00",
+                "name": "Esse é o nome da ata 6",
+                "description": "Essa é a descrição da ata 6",
+                "file": "arquivo6.pdf"
+            }
         ];
 
         let html = '';
         for (i = 0; i < data.length; i++) {
             animate = (i % 2 === 0 ? 'data-anime="right"' : 'data-anime="left"');
-            data[i].date = 
+            let date = new Date(data[i].date);
+            let month = date.toLocaleDateString('pt-BR', {month: "short"}).toLocaleUpperCase();
+            let day = date.getDate();
+            let year = date.getFullYear();
             html += `
             <div class="col main_atas_col animate" ${animate}>
                 <article class="box-atas-item">
                     <div class="col col-5">
                         <ul class="atas-item-date">
-                            <li class="m">${data[i].m}</li>
-                            <li class="d">${data[i].d}</li>
-                            <li class="y">${data[i].y}</li>
+                            <li class="m">${month}</li>
+                            <li class="d">${day}</li>
+                            <li class="y">${year}</li>
                         </ul>
                     </div> 
 
