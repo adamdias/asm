@@ -66,7 +66,7 @@ $(function(){
             });
         }
 
-        if (window.pageYOffset >= (contact.offsetTop - 150)) {
+        if (window.pageYOffset >= (contact.offsetTop - 200)) {
             Array.from(links_menu).forEach(function(a) {
                 a.classList.remove('active');        
                 if (a.getAttribute('href') == "#contact") {
@@ -90,58 +90,57 @@ $(function(){
     $('#load_atas').click(function() {
         let data = [
             {
-                "d": "11",
-                "m": "ABR",
-                "y": "2019",
+                "date": "2019-04-20",
                 "name": "Esse é o nome da ata",
                 "description": "Essa é a descrição da ata",
                 "file": "arquivo.pdf"
             },
-            {
-                "d": "12",
-                "m": "ABR",
-                "y": "2019",
-                "name": "Esse é o nome da ata 2",
-                "description": "Essa é a descrição da ata 2",
-                "file": "arquivo2.pdf"
-            },
-            {
-                "d": "13",
-                "m": "ABR",
-                "y": "2019",
-                "name": "Esse é o nome da ata 3",
-                "description": "Essa é a descrição da ata 3",
-                "file": "arquivo3.pdf"
-            },
-            {
-                "d": "14",
-                "m": "ABR",
-                "y": "2019",
-                "name": "Esse é o nome da ata 4",
-                "description": "Essa é a descrição da ata 4",
-                "file": "arquivo4.pdf"
-            },
-            {
-                "d": "15",
-                "m": "ABR",
-                "y": "2019",
-                "name": "Esse é o nome da ata 5",
-                "description": "Essa é a descrição da ata 5",
-                "file": "arquivo5.pdf"
-            },
-            {
-                "d": "16",
-                "m": "ABR",
-                "y": "2019",
-                "name": "Esse é o nome da ata 6",
-                "description": "Essa é a descrição da ata 6",
-                "file": "arquivo6.pdf"
-            }
+            // {
+            //     "d": "12",
+            //     "m": "ABR",
+            //     "y": "2019",
+            //     "name": "Esse é o nome da ata 2",
+            //     "description": "Essa é a descrição da ata 2",
+            //     "file": "arquivo2.pdf"
+            // },
+            // {
+            //     "d": "13",
+            //     "m": "ABR",
+            //     "y": "2019",
+            //     "name": "Esse é o nome da ata 3",
+            //     "description": "Essa é a descrição da ata 3",
+            //     "file": "arquivo3.pdf"
+            // },
+            // {
+            //     "d": "14",
+            //     "m": "ABR",
+            //     "y": "2019",
+            //     "name": "Esse é o nome da ata 4",
+            //     "description": "Essa é a descrição da ata 4",
+            //     "file": "arquivo4.pdf"
+            // },
+            // {
+            //     "d": "15",
+            //     "m": "ABR",
+            //     "y": "2019",
+            //     "name": "Esse é o nome da ata 5",
+            //     "description": "Essa é a descrição da ata 5",
+            //     "file": "arquivo5.pdf"
+            // },
+            // {
+            //     "d": "16",
+            //     "m": "ABR",
+            //     "y": "2019",
+            //     "name": "Esse é o nome da ata 6",
+            //     "description": "Essa é a descrição da ata 6",
+            //     "file": "arquivo6.pdf"
+            // }
         ];
 
         let html = '';
         for (i = 0; i < data.length; i++) {
             animate = (i % 2 === 0 ? 'data-anime="right"' : 'data-anime="left"');
+            data[i].date = 
             html += `
             <div class="col main_atas_col animate" ${animate}>
                 <article class="box-atas-item">
