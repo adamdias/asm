@@ -63,15 +63,15 @@ $(function(){
             }
         });
 
-        $('.page-section').each(function() {
-            let sectionId = $('#' + $(this).attr('id'));
-            let link = $('.link-scroll[href="#' + $(this).attr('id') + '"]');
-            let sizeMenu = ($(this).attr('id') === 'contact' ? 200 : 60);
-            if($(window).scrollTop() >= sectionId.offset().top - sizeMenu) {
-                $(".link-scroll").removeClass('active');
-                link.addClass('active');
-            }
-        });  
+        // $('.page-section').each(function() {
+        //     let sectionId = $('#' + $(this).attr('id'));
+        //     let link = $('.link-scroll[href="#' + $(this).attr('id') + '"]');
+        //     let sizeMenu = ($(this).attr('id') === 'contact' ? 200 : 60);
+        //     if($(window).scrollTop() >= sectionId.offset().top - sizeMenu) {
+        //         $(".link-scroll").removeClass('active');
+        //         link.addClass('active');
+        //     }
+        // });  
 
         $('.box-numbers-item h1').each(function() {
             let $this = $(this);
@@ -111,6 +111,10 @@ $(function(){
         if (index < 6) {
             $(this).addClass('ataActive');
             $(this).css('display', 'block');
+        }
+
+        if ($('.main_atas_col').length <= 6) {
+            $('#load_atas').css('display', 'none');
         }
     });
     
