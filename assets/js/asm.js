@@ -1,5 +1,21 @@
 $(function(){    
     let visible = false;
+
+    function animeScroll() {
+        const target = document.querySelectorAll('[data-anime]');
+        const animationClass = 'animate';
+        const windowTop = window.pageYOffset + (window.innerHeight - 50);
+        target.forEach(function(element) {
+            if((windowTop) > element.offsetTop) {
+                element.classList.add(animationClass);
+            } else {
+                element.classList.remove(animationClass);
+            }
+        })
+    }
+    
+    animeScroll();
+
     $('.page-menu-mobile-btn').click(function() {
         if (!visible) {
             $('#menu_mobile').animate({
@@ -17,17 +33,19 @@ $(function(){
     });
 
     if (window.pageYOffset > 0) {
-        box_menu.classList.add('page-menu-scroll');        
+        $('#box_menu').addClass('page-menu-scroll');        
     } else {
-        box_menu.classList.remove('page-menu-scroll');
+        $('#box_menu').removeClass('page-menu-scroll');
     }
 
     $(window).scroll(function() {
         if (this.pageYOffset > 0) {
-            box_menu.classList.add('page-menu-scroll');        
+            $('#box_menu').addClass('page-menu-scroll');
         } else {
-            box_menu.classList.remove('page-menu-scroll');
+            $('#box_menu').removeClass('page-menu-scroll');
         }
+
+        animeScroll();
 
         var speed   = 3000;
         $('.box-numbers-item h1').each(function() {
@@ -154,39 +172,5 @@ $(function(){
         } else {
             $('#load_atas').css('display', 'block');
         }
-    });
+    });    
 });
-
-const debounce = function(func, wait, immediate) {
-    let timeout;
-    return function(...args) {
-        const context = this;
-        const later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
-
-function animeScroll() {
-    const target = document.querySelectorAll('[data-anime]');
-    const animationClass = 'animate';
-    const windowTop = window.pageYOffset + window.innerHeight - 50;
-    target.forEach(function(element) {
-        if((windowTop) > element.offsetTop) {
-        element.classList.add(animationClass);
-        } else {
-        element.classList.remove(animationClass);
-        }
-    })
-}
-
-animeScroll();
-
-window.onscroll = (debounce(function() {
-    animeScroll();
-}, 200));

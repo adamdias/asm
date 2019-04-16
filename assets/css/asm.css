@@ -49,7 +49,7 @@ ul {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99;    
+    z-index: 99;  
 }
 
 .page-menu-scroll {
@@ -103,6 +103,7 @@ ul {
     color: #FFF;
     font-size: 32px;
     float: right;
+    margin-right: 35px;
     cursor: pointer;
 }
 
